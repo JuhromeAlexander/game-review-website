@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>InsiderGames</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <script src="/js/app.js"></script>
+    <script src="/js/game.js"></script>
+    <script src="/js/review.js"></script>
+    <script src="/js/user.js"></script>
+    <script type="text/javascript">
+        //To check if position is at top of webpage.
+        $(window).on('scroll', function(){
+            if($(window).scrollTop()){
+                $('nav').addClass('bg-dark');
+            }else{
+                $('nav').removeClass('bg-dark');
+            }
+        });
+    </script>
+    
+    <script type="text/javascript">
+
+        function getPlatformPC(){
+            sessionStorage.setItem('platform','pc');
+            console.log(sessionStorage.getItem('platform'))
+        }
+
+        function getPlatformXbox(){
+            sessionStorage.setItem('platform','xbox');
+            console.log(sessionStorage.getItem('platform'))
+        }
+
+        function getPlatformPs4(){
+            sessionStorage.setItem('platform','ps4');
+            console.log(sessionStorage.getItem('platform'))
+        }
+
+        function getPlatformOthers(){
+            sessionStorage.setItem('platform','others');
+            console.log(sessionStorage.getItem('platform'))
+        }
+    </script>
+</head>
+<body class="body-login" onload="checkoutOnload()">
+        <header style="height:70px;"><div w3-include-html="topNavBar.html"></div></header>
+        <main>
+            <div class="container-fluid" style="margin:10px;">
+                <div class="row">
+                    <!-- Billing Address border:1px solid grey -->
+                    <div class="col-md-4" style="margin:3px; border:1px solid grey; color:white;">
+                        <!-- Billing Address -->
+                        <div class="row" style="padding-left:13px;" ><h2>Billing Address</h2></div>
+                        <!-- First Name/Last Name style="margin-bottom:5px;" -->
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="checkoutFirstName">First Name</label>
+                                <input type="text" class="form-control" id="checkoutFirstName" placeholder="First Name">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="checkoutLastName">Last Name</label>
+                                <input type="text" class="form-control" id="checkoutLastName" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <!-- Username -->
+                        <div class="row" style="padding-left:13px;">
+                            <div class="form-group">
+                                <label for="checkoutUsername">Username</label>
+                                <input type="text" class="form-control" id="checkoutUsername" placeholder="Username">
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <div class="row" style="padding-left:13px;">
+                            <div class="form-group">
+                                <label for="checkoutEmail">Email</label>
+                                <input type="text" class="form-control" id="checkoutEmail" placeholder="Email">
+                            </div>
+                        </div>
+                        <!-- Address -->
+                        <div class="row" style="padding-left:13px;">
+                            <div class="form-group">
+                                <label for="checkoutAddress">Address</label>
+                                <input type="text" class="form-control" id="checkoutAddress" placeholder="Address">
+                            </div>
+                        </div>
+                        <!-- Country State Zipcode -->
+                        <div class="row">
+                            <div class="col-md-4 form-group">
+                                <label for="checkoutCountry">Country</label>
+                                <input type="text" class="form-control" id="checkoutCountry" placeholder="Country">
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <label for="checkoutState">State</label>
+                                <input type="text" class="form-control" id="checkoutState" placeholder="State">
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <label for="checkoutZipcode">Zipcode</label>
+                                <input type="text" class="form-control" id="checkoutZipcode" placeholder="Zipcode">
+                            </div>
+                        </div>
+                        <div class="row" style="padding-left:13px;">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkoutShippingAddress">
+                                <label class="form-check-label" for="checkoutShippingAddress">Shipping Address is same as Billing Address</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkoutSaveBillingAddress">
+                                <label class="form-check-label" for="checkoutSaveBillingAddress">Save the Information for Next Time</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Payment -->
+                    <div class="col-md-4" style="margin:3px; border:1px solid grey; height:250px; color:white;">
+                        <!-- Payment -->
+                        <div class="row" style="padding-left:13px;"><h2>Payment</h2></div>
+                        <div class="row">
+                            <!-- Name on Card-->
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="checkoutPaymentName">Name on Card</label>
+                                    <input type="text" class="form-control" id="checkoutPaymentName" placeholder="Name on Card">
+                                </div>
+                            </div>
+                            <!-- Card Number -->
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="checkoutPaymentCardNo">Card Number</label>
+                                    <input type="text" class="form-control" id="checkoutPaymentCardNo" placeholder="Card Number">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Expiration Date / CCV -->
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="checkoutPaymentExpireDate">Expiration Date</label>
+                                    <input type="text" class="form-control" id="checkoutPaymentExpireDate" placeholder="Expiry Date">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="checkoutPaymentCCV">CCV</label>
+                                    <input type="text" class="form-control" id="checkoutPaymentCCV" placeholder="CCV">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:60px;">
+                            <button class="btn btn-success" style="width:100%" id="checkoutButton" onclick="checkoutOnClick()">Checkout</button>
+                        </div>
+                    </div>
+                    <!-- Cart -->
+                    <div class="col-md-3 " style="color:white; margin-left:5px;">
+                        <!-- Cart Name No.of Items in Cart-->
+                        <div class="row justify-content-between">
+                            <div class="col-md-4">
+                                <h5>Your Cart</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p style="float: right;"><span id="checkoutCartItems"></span></p>
+                            </div>
+                        </div>
+                        <!-- Cart Box -->
+                        <div class="row" style="border:1px solid grey; border-radius:15px; padding:15px;">
+                            <div id="cartRow"></div>
+                        </div>
+                        <div class="row">
+                                <p style="color:white; margin-top: 30px;">Total Price:$ <span id="cartTotalPrice"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div w3-include-html="aboutus.html"></div>
+</body>
+    <script src="/js/w3.js"></script>
+    <script>
+        w3.includeHTML();
+    </script>   
+
+</html>

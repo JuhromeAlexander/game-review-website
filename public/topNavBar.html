@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" data-spy="affix">
+        
+    <a class="navbar-brand" href="index.html">InsiderGames</a>
+
+    <!-- Hamburger Menu Icon -->
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarDrop" aria-controls="navbarDrop" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarDrop">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="about" data-toggle="modal" data-target="#aboutModal">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="allgames.html">Games</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Platforms</a>
+                <div class="dropdown-menu" aria-labelledby="navBarDropdownLink">
+                    <a class="dropdown-item" href="platform.html" onclick="getPlatformPC()">PC</a>
+                    <a class="dropdown-item" href="platform.html" onclick="getPlatformPs4()">PS4</a>
+                    <a class="dropdown-item" href="platform.html" onclick="getPlatformXbox()">XBOX</a>
+                    <a class="dropdown-item" href="platform.html" onclick="getPlatformOthers()">Others</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reviews.html">Reviews</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 signinjoin">
+            <li id="signInLog" class="nav-item ">
+                <a class="nav-link" href="login.html">Sign In</a>
+            </li>
+            <li id="registerLog" class="nav-item">
+                <a class="nav-link" href="login.html">Join</a>
+            </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0  ">
+            <input class="form-control mr-sm-2" id="searchBox" type="search" placeholder="Search" aria-label="Search">
+            <a class="btn btn-success my-2 my-sm-0" onclick="getSearchInput()">Search</a>
+        </form>
+
+        <ul class="navbar-nav mt-0 mt-lg-0">
+                <li class="nav-item"><a class="nav-link" href="accountinfo.html"><i class="fas fa-user"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+

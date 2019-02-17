@@ -1,0 +1,27 @@
+<div class="modal fade" id="addReviewModal" tabindex="-1" role="dialog" aria-labelledby="addReviewLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="addReviewModalLabel">Add Review</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="addReview" class="col-form-label">Review:</label>
+                        <textarea id="addReview" class="form-control" rows="5" placeholder="Write your review here"></textarea>
+                    </div>     
+                    <div class="form-group">
+                        <label for="addRating" class="col-form-label">Rating:</label>
+                        <input id="addRating" class="form-control" placeholder="Rating" type="number" min="0" max="10">
+                        <small id="addRatingHelp" class="form-text text-muted">Give a Rating From 1-10</small>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-dark" onclick="addReview()">Add Review</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <script src="/js/app.js"></script>
+    <script src="/js/game.js"></script>
+    <script src="/js/review.js"></script>
+    <script src="/js/user.js"></script>
+    <script type="text/javascript">
+        function getPlatformPC(){
+            sessionStorage.setItem('platform','pc');
+            console.log(sessionStorage.getItem('platform'))
+        }
+
+        function getPlatformXbox(){
+            sessionStorage.setItem('platform','xbox');
+            console.log(sessionStorage.getItem('platform'))
+        }
+
+        function getPlatformPs4(){
+            sessionStorage.setItem('platform','ps4');
+            console.log(sessionStorage.getItem('platform'))
+        }
+
+        function getPlatformOthers(){
+            sessionStorage.setItem('platform','others');
+            console.log(sessionStorage.getItem('platform'))
+        }
+    </script>
+    <script type="text/javascript">
+    
+        var checkLogin = authentication()
+
+        if(checkLogin != true){
+
+            document.getElementById('gameInfoAddReview').disabled = true;
+
+        }else{
+            document.getElementById('gameInfoAddReview').disabled = false;
+        }
+        
+    </script>
+</head>
+<!-- {% comment %} gameInfoScreen() {% endcomment %} -->
+<body onload="gameInfoScreen()">
+    <header style="height:70px">
+        <div w3-include-html="topNavBar.html"></div>
+    </header>
+
+    <main>
+        <div class="container" id="gameInfo" tabindex="-1">
+            <!-- Row Contains Game Image, Game Desc Stuff and Extra Info -->
+            <div class="row">
+                <div class="col-md-3 col-game-info">
+                    <img class="img-fluid img-thumbnail" id="gamePoster">
+                </div>
+
+                <div class="col-md-3 col-game-info">
+                    <!-- Title -->
+                    <div class="row">
+                        <h5>Title</h5>
+                    </div>
+                    <div class="row">
+                        <p id="gameTitle"></p>
+                    </div>
+                    <div class="row">
+                        <h5>Description</h5>
+                    </div>
+                    <div class="row">
+                        <p id="gameDesc"></p>
+                    </div>
+                    <!-- Genre -->
+                    <div class="row">
+                        <h5>Genre</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3" id="genreRow"></div>
+                    </div>
+                    <div class="row">
+                        <h5>Rating</h5>
+                    </div>
+                    <div class="row">
+                        <p><span id="gameRating"></span>/10</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="row btn-margin">
+                            <button type="button" class="btn btn-dark" id="addCart" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-dark" style="margin-top:10px;" id="removeCart" onclick="removeFromCart()">Remove From Cart</button>
+                    </div>
+                    <div class="row btn-margin">
+                            <button type="button" class="btn btn-dark" onclick="addToWishlist()" id="addWish">Add to Wishlist</button>
+                            <button type="button" class="btn btn-dark" style="margin-top:10px;" onclick="deleteFromWishlist()" id="removeWish">Remove From Wishlist</button>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="row">
+                        <h3>Extra Information:</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="game-text-size">Release Date:</p>
+                        </div>
+                        <div class="col-md-6" id="gameRelease"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="game-text-size">Publisher:</p>
+                        </div>
+                        <div class="col-md-6" id="gameDevTeam"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="game-text-size">Development Team:</p>
+                        </div>
+                        <div class="col-md-6" id="gameMainDev"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="game-text-size">Platforms:</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div id="platformRow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <iframe src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="gameTrailer"></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- Next Row, Contains Review -->
+            <div class="row" style="margin-top:120px;">
+                <div class="column" style="border:solid grey; width:100px; text-align:center;">
+                    <h5>Reviews</h5>
+                </div>
+                <div class="column" style="margin-left:600px;">
+                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#addReviewModal">Add Review</button>
+                </div>
+                <div w3-include-html="addReview.html"></div>
+            </div>
+            <!-- Container Row To hold reviews class="row" -->
+            <div>
+                <div id="reviewRow"></div>
+            </div>
+            <div w3-include-html="editReview.html"></div>
+        </div>
+    </main>
+    <div w3-include-html="aboutus.html"></div>
+    <div w3-include-html="footer.html" class="footer-wrapper"></div>
+
+    
+</body>
+<script src="/js/w3.js"></script>
+    <script>
+        w3.includeHTML();
+    </script>
+</html>

@@ -1,0 +1,223 @@
+html,body,header{
+    height: 100%;
+    width: 100%;
+}
+
+#home{
+    background: url(/images/blurrystock-582157-unsplash.jpg);
+    display: table;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    opacity: 0.81;
+}
+
+.landing-text{
+    padding-left: 20px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    color: rgb(255, 255, 255)
+}
+
+.landing-text h1{
+    font-size: 500%;
+    font-weight: 700;
+}
+
+.landing-text h4{
+    font-weight: 500;
+    padding-top: 45px;
+}
+
+.my-col{
+    border: solid gray;
+    width: 150px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.thumbnail {
+    height: 200px;
+    width: 350px;
+}
+
+.dropdown-menu{
+    background: grey;
+}
+
+.dropdown:hover>.dropdown-menu{
+    display: block;
+}
+
+.footer-wrapper{
+    
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    background: black;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.container-fluid{
+    display: inherit;
+    text-align: justify;
+}
+
+.social-media-links{
+    margin: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.social-media-links ul{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.social-media-links ul li{
+    display: inline-block;
+    height: 36px;
+    width: 36px;
+    margin-right: 2px;
+    text-align: center;
+}
+
+.footer-logo{
+    text-align: left;
+    color: whitesmoke  ;
+}
+
+.footer-right{
+    text-align: right;
+    color: whitesmoke;
+}
+
+.col-plat{
+    border: solid gray;
+    width: 250px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 20px
+}
+
+.col-plat-vm{
+    margin-right: 30px
+}
+
+.col-margin{
+    margin-top: 10px;
+}
+
+.col-game-info{
+    width: 460px;
+    height: 450px;
+}
+
+.btn-margin{
+    margin-top: 20px;
+}
+
+.game-text-size{
+    font-size: 13px;
+}
+
+.body-login{
+    margin: 0;
+    padding: 0;
+    background: url(/images/blurrystock-582157-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    opacity: 0.8;
+}
+
+.login-box{
+    width: 320px;
+    height: 470px;
+    background: #000000;
+    box-sizing: border-box;
+    margin-top: 20%;
+    margin-left: 30px;
+    padding: 70px 30px;
+}
+
+.login-box h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="text"], input[type="password"], input[type="email"]{
+    border:none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.btn-login{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: red;
+    color: #ffffff;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-login:hover{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000000;
+}
+
+.login-box a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+}
+
+.login-box a:hover{
+    color: #ffc107;
+}
+
+.invisible{
+    display: none;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
